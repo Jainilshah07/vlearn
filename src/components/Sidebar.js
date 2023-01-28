@@ -48,6 +48,7 @@ const Sidebar = () => {
               <span className="text-2xl block float-left">
                 <TfiAnnouncement/>
               </span>
+              
               <span className={`text-base font-bold flex-1 ${!open && "hidden" }`}>Announcements</span>
             </li>
           </div>
