@@ -15,8 +15,6 @@ const Login = () => {
     password: "",
   });
 
-  const [records, setRecords] = useState([]);
-
   const InputHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
