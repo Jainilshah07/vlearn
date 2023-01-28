@@ -11,6 +11,7 @@ const TeacherSchema = new mongoose.Schema({
     teacherId:{type: String, required: true},
     salt: {type: String, required: true},
     name:{type: String},
+    role:{type: String ,default:"teacher"},
     // notesArray:[{type: mongoose.Schema.Types.ObjectId ,ref: 'note'}],
     phone:{type: String},
     div:{

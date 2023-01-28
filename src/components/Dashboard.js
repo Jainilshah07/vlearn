@@ -1,32 +1,30 @@
 import React, { useEffect } from "react";
+// import Card from "./Card";
 import { useNavigate } from 'react-router-dom'
+import Sidebar from "./Sidebar";
 
 const Dashboard = () => {
-    const navigate = useNavigate() ;
-    const getToken = false;
-    useEffect(() => {
-        if (getToken=="true"){
-        //   getNotes();
-        console.log("hey got token")
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        if (localStorage.getItem('signature')){
+           console.log("loggin succes")
         }
         else{
           navigate("/login");
+          console.log("Not loggin")
         }
-        
         // eslint-disable-next-line
-      }, []);
+      },[]);
+
   return (
     <>
       <div className="grid grid-cols-10">
         <div className="col-span-2">
-            <div className="">
-                {/* <Sidebar */}
-            </div>
+            <Sidebar />
         </div>
-        <div className="col-span-8">
-            {/* <Dashboard of student /Teacher  */}
-     
+        <div>
+            {/* grpahs n cards */}
         </div>
       </div>
     </>

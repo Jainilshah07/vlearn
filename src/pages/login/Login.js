@@ -4,10 +4,13 @@ import logo from "../../assets/Logo.svg";
 import google from "../../assets/google.svg";
 import github from "../../assets/github.svg";
 import signup from "../../assets/signup.svg";
+import axios from "../../axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate() ;
   const [input, setInput] = useState({
-    username: "",
+    role: "",
     email: "",
     password: "",
   });
@@ -24,14 +27,46 @@ const Login = () => {
     });
   };
 
-  const SubmitHandler = (e) => {
+  const SubmitHandler = async (e) => {
     e.preventDefault();
-    const newRecord = { ...input, id: new Date().getTime().toString() };
-    console.log(records);
-    setRecords({ ...records, newRecord });
-    console.log(records);
+    const user = {email: input.email, password : input.password ,role:input.role}
+    const role = input.role;
+    try {
+      if(role=="student"){
+        const res = await axios.post("/student/login", user);
+        console.log(res.data);
+        localStorage.setItem("signature",res.data.signature)
+        navigate("/")
+      }
+      else if(role=="teacher"){
+        const res = await axios.post("/teacher/login", user);
+        console.log(res.data);
+        localStorage.setItem("signature",res.data.signature)
+        navigate("/")
+      }
+    }catch(error) {
+      console.log("error form content", error)
+    }
+
+    //   const user = {email: input.email, password : input.password ,role: "student"}
+    //   const res = await axios.post("/student/login", user);
+    //   console.log(res.data);
+    //   // localStorage.setitem(signature,res.data.sig)
+    //   navigate("./")
+    // } catch (error) {
+    //   console.log("error form content", error)
+    // }
+    // try{
+    //   const user = {email: input.email, password : input.password}
+    //   const res = await axios.post("/teacher/login", user);
+    //   console.log(res.data);
+    //   navigate("./")
+    // }catch(error){
+    //   console.log("error form content", error);
+    // }
+
     setInput({
-      username: "",
+      role: "",
       email: "",
       password: "",
     });
@@ -75,11 +110,11 @@ const Login = () => {
 
                   <div class="mx-auto mt-2 max-w-xs">
                     <input
-                      name="username"
+                      name="role"
                       class="w-full px-8 py-2 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="text"
-                      placeholder="Username"
-                      value={input.username}
+                      placeholder="role"
+                      value={input.role}
                       onChange={InputHandler}
                       required
                     />
