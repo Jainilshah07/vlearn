@@ -14,7 +14,6 @@ const StudentSchema = new mongoose.Schema({
         enum: ['A', 'B'],
         default: 'A'
     },
-    // assignment : [{type: String}]
 },{
     toJSON: {
         transform(doc,ret){
