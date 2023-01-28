@@ -4,6 +4,10 @@ import Login from './pages/login/Login';
 import Dashboard from './components/Dashboard';
 import SignUpTeacher from './pages/login/SignUpTeacher';
 import SignUpStudent from './pages/login/SignUpStudent';
+// import './App.css';
+// import SignUp from './components/Signup';
+// import Sidebar from './components/Sidebar';
+// import Card from './components/Card';
 
 function App() {
   return (
