@@ -4,6 +4,7 @@ import Login from './pages/login/Login';
 import Dashboard from './components/Dashboard';
 import SignUpTeacher from './pages/login/SignUpTeacher';
 import SignUpStudent from './pages/login/SignUpStudent';
+import RiskPrediction from './pages/RiskPrediction';
 // import './App.css';
 // import SignUp from './components/Signup';
 // import Sidebar from './components/Sidebar';
@@ -12,7 +13,7 @@ import SignUpStudent from './pages/login/SignUpStudent';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route
@@ -28,7 +29,8 @@ function App() {
                 element={<SignUpStudent />}
               ></Route>
             </Routes>
-          </BrowserRouter>
+          </BrowserRouter> */}
+          <RiskPrediction/>
       
     </div>
   );
