@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const AssignmentSchema = new mongoose.Schema(
   {
-    // students: [{ type: String, required: true }],
     div: {
       type: String,
       enum: ["A", "B"],

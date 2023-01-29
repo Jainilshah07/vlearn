@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import bg from "../../assets/bgfinal.svg";
-import logo from "../../assets/Logo.svg";
+import logo from "../../assets/Logo.jpg";
 import google from "../../assets/google.svg";
 import github from "../../assets/github.svg";
 import signup from "../../assets/signup.svg";

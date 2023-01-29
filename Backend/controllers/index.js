@@ -1,12 +1,8 @@
 const { GetAssignment, AddAssignment, UpdateAssignment, DeleteAssignment, GetAllAssignments } = require('./Assignment')
 const { GetNote, AddNote, UpdateNote, DeleteNote, GetAllNotes } = require('./Note')
+const { AddMarks,GetFailureCn } = require('./Marks')
 const { GetStudent, AddStudent, UpdateStudent, DeleteStudent, StudentLogin, GetAllStudents } = require('./Student')
 const { GetTeacher, AddTeacher, UpdateTeacher, DeleteTeacher, TeacherLogin, GetAllTeachers } = require('./Teacher')
-// const { AddImage, GetAllImageNames, FilteredImageNames } = require('./Image')
-// const { AddProject, DeleteProject, GetProject, UpdateProject, GetAllProjects } = require('./Project')
-// const { AddFile, GetAllFileNames, FilteredFileNames } = require('./File')
-// const { AddLecture, DeleteLecture, GetLecture, UpdateLecture, GetAllLectures } = require('./Lecture')
-// const { AddGuide, DeleteGuide, GetGuide, UpdateGuide, GetAllGuides } = require('./Guide')
 
 module.exports.GetAssignment = GetAssignment
 module.exports.AddAssignment = AddAssignment
@@ -33,6 +29,10 @@ module.exports.UpdateTeacher = UpdateTeacher
 module.exports.DeleteTeacher = DeleteTeacher
 module.exports.GetAllTeachers = GetAllTeachers
 module.exports.TeacherLogin = TeacherLogin
+
+
+module.exports.AddMarks = AddMarks
+module.exports.GetFailureCn = GetFailureCn
 // module.exports.AddImage = AddImage
 // module.exports.GetAllImageNames = GetAllImageNames
 // module.exports.FilteredImageNames = FilteredImageNames

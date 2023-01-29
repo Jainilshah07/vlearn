@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 
-const { StudentRouter, TeacherRouter, AssignmentRouter, NoteRouter, FileRouter } = require('../routes')
+const { StudentRouter, TeacherRouter, AssignmentRouter, NoteRouter, MarksRouter } = require('../routes')
 
 module.exports.App = async (app) => {
     app.use(express.json())
@@ -16,6 +16,7 @@ module.exports.App = async (app) => {
     app.use('/api/v1/teacher', TeacherRouter)
     app.use('/api/v1/assignment', AssignmentRouter)
     app.use('/api/v1/note', NoteRouter)
+    app.use('/api/v1/marks', MarksRouter)
 
     app.use('*', async (req, res, next) => {
         return res.status(404).send('<h1>404 Not Found</h1>')

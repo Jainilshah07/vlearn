@@ -1,5 +1,5 @@
-// Assignment Authorize
 const { Teacher } = require('../models/Teacher')
+const { Student } = require('../models/Student')
 
 module.exports.AssignmentAuthorize = async (req, res, next) => {
     if (req.user._id) {
@@ -14,6 +14,18 @@ module.exports.AssignmentAuthorize = async (req, res, next) => {
 }
 
 module.exports.NoteAuthorize = async (req, res, next, error) => {
+    if (req.user.role === "teacher" || req.user.role === "student") {
+        next()
+    }
+
+    else {
+        return res.status(401).json({
+            message: "Unauthorized Role"
+        })
+    }
+}
+
+module.exports.MarksAuthorize = async (req, res, next, error) => {
     if (req.user.role === "teacher" || req.user.role === "student") {
         next()
     }

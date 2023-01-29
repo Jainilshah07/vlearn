@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import bg from "../../assets/bgfinal.svg";
-import logo from "../../assets/Logo.svg";
+import logo from "../../assets/Logo.jpg";
 import google from "../../assets/google.svg";
 import github from "../../assets/github.svg";
 import signup from "../../assets/signup.svg";
@@ -89,14 +89,14 @@ const Login = () => {
                       <div class="bg-white p-2 rounded-full">
                         <img class="w-4" src={google} alt="" />
                       </div>
-                      <span class="ml-4">Sign Up with Google</span>
+                      <span class="ml-4">Sign In with Google</span>
                     </button>
 
                     <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-2 bg-[#D4D9F6] text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5">
                       <div class="bg-white p-1 rounded-full">
                         <img class="w-6" src={github} alt="" />
                       </div>
-                      <span class="ml-4">Sign Up with GitHub</span>
+                      <span class="ml-4">Sign In with GitHub</span>
                     </button>
                   </div>
 

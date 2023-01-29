@@ -69,5 +69,4 @@ const FormTeach = () => {
 
     )
 }
-
 export default FormTeach;
