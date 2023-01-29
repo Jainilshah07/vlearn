@@ -9,6 +9,8 @@ import FormStud from "./pages/FormStud";
 import FormTeach from "./pages/FormTeach";
 import ViewCourses from "./pages/ViewCourses";
 import RiskPrediction from "./pages/RiskPrediction";
+import Notes from "./pages/Notes";
+import Assignment from "./pages/Assignment";
 // import { Calendar } from "@fullcalendar/core";
 
 function App() {
@@ -45,8 +47,8 @@ function App() {
               ></Route>
               <Route
                 exact
-                path="/risk-pred"
-                element={<Calendar/>}
+                path="/notes"
+                element={<Notes />}
               ></Route>
               <Route
                 exact
@@ -57,6 +59,11 @@ function App() {
                 exact
                 path="/risk-prediction"
                 element={<RiskPrediction />}
+              ></Route>
+              <Route
+                exact
+                path="/announcements"
+                element={<Assignment />}
               ></Route>
             </Routes>
           </BrowserRouter>

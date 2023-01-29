@@ -1,5 +1,5 @@
-import e from 'cors'
 import React, { useState } from 'react'
+import { Link  } from 'react-router-dom'
 import Card from '../components/Card'
 import Sidebar from '../components/Sidebar'
 
@@ -54,25 +54,11 @@ const RiskPrediction = () => {
   const SubmitHandler = (e) => {
     e.preventDefault();
     const newRecord = { ...input, id: new Date().getTime().toString() };
-    console.log(records);
+    // console.log(records);
     
     setRecords({ ...records, newRecord });
-    let sum = records.cntt1.int+records.cntt2.int +records.wptt1.int +records.wptt2.int +records.flattt1.int +records.flattt2.int +records.daatt1.int +records.daatt2.int +records.pstt1.int +records.pstt2.int
-    if(sum > 220){
-      sgpa = 9.113
-    }else if(sum > 200){
-      sgpa = 8.863
-    }else if(sum > 175){
-      sgpa = 7.723
-    }else if(sum > 150){
-      sgpa = 6.263
-    }
-    else{
-      sgpa = 5.063
-    }
-    // sgpa = 0.04*(records.cntt1*0.07395048+records.cntt2*0.09203139-records.wptt1*0.00391362+records.wptt2*0.05201528-records.flattt1*0.00267874+records.flattt2*0.00041687+records.daatt1*0.02216413+records.daatt2*0.07679734+records.pstt1*0.06236859+records.pstt2*0.05002947) + 0.53324634
+    sgpa = 10*(0.04*(parseInt(newRecord.cntt1)*0.07395048+parseInt(newRecord.cntt2)*0.09203139-parseInt(newRecord.wptt1)*0.00391362+parseInt(newRecord.wptt2)*0.05201528-parseInt(newRecord.flattt1)*0.00267874+parseInt(newRecord.flattt2)*0.00041687+parseInt(newRecord.daatt1)*0.02216413+parseInt(newRecord.daatt2)*0.07679734+parseInt(newRecord.pstt1)*0.06236859+parseInt(newRecord.pstt2)*0.05002947) + 0.53324634)
     console.log(records);
-    console.log(sum)
     console.log(sgpa)
 
     document.getElementById("sgpa").innerHTML=sgpa;
@@ -92,9 +78,12 @@ const RiskPrediction = () => {
 
   return (
     <>
-        <div className='grid grid-cols-10 bg-[#D4D9F6]'>
-          <div className='col-span-2'>
-            <Sidebar/>
+        <div className='grid grid-cols-10 h-screen bg-[#D4D9F6]'>
+          <div className='col-span-2 ml-16 my-auto bg-slate-50'>
+            <img className='h-64' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWC_tTgVZgQYc1B-Fp-OWCbnQ6UO1tQ_NFMw&usqp=CAU" alt="" />
+            {/* <Sidebar/> */}
+            {/* <Link to="/"> <button className="bg-[#233FF2] mr-4 p-3 my-auto rounded-md text-white font-semibold h-12 w-45">Go to Dashboard</button></Link> */}
+          
           </div>
           <div className="col-span-8 mx-2 sm:mx-8">
             <p className='text-4xl font-bold text-center sm:my-8'>lets calculate your risk</p>
