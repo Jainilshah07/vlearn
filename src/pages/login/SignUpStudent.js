@@ -4,16 +4,15 @@ import logo from "../../assets/Logo.svg";
 import google from "../../assets/google.svg";
 import github from "../../assets/github.svg";
 import signup from "../../assets/signup.svg";
+import axios from "../../axios";
 
 
 const SignUpStudent = () => {
     const [input, setInput] = useState({
-        username: "",
+        sapid: "",
         email: "",
         password: "",
       });
-    
-      const [records, setRecords] = useState([]);
     
       const InputHandler = (e) => {
         const name = e.target.name;
@@ -27,14 +26,17 @@ const SignUpStudent = () => {
 
       
     
-      const SubmitHandler = (e) => {
+      const SubmitHandler = async (e) => {
         e.preventDefault();
-        const newRecord = { ...input, id: new Date().getTime().toString() };
-        console.log(records);
-        setRecords({ ...records, newRecord });
-        console.log(records);
+        const user = {email: input.email, password : input.password ,sapid:input.sapid}
+        try{
+            const res = await axios.post("/student/", user);
+            console.log(res.data);
+        }catch (error){
+            console.log("error form content", error)
+        }
         setInput({
-          username: "",
+          sapid: "",
           email: "",
           password: "",
         });
@@ -71,11 +73,11 @@ const SignUpStudent = () => {
 
                   <div class="mx-auto mt-5 max-w-xs">
                     <input
-                      name="username"
+                      name="sapid"
                       class="w-full px-8 py-2 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="text"
                       placeholder="Teacher ID"
-                      value={input.username}
+                      value={input.sapid}
                       onChange={InputHandler}
                       required
                     />
@@ -86,7 +88,7 @@ const SignUpStudent = () => {
                       placeholder="Email"
                       value={input.email}
                       onChange={InputHandler}
-                      reaquired
+                      required
                     />
                     <input
                       name="password"
@@ -101,23 +103,8 @@ const SignUpStudent = () => {
                       <img className="fill-white w-4 h-4" src={signup} alt="" />
                       <span class="ml-3">Sign Up</span>
                     </button>
-                    <div className="flex mt-2">
-                      <div class=" text-xs text-gray-600">
-                        Not Signed In? Sign Up as{" "}
-                        <a
-                          href="/"
-                          class="border-b border-gray-500 border-dotted"
-                        >
-                          Teacher
-                        </a>{" "}
-                        or{" "}
-                        <a
-                          href="/"
-                          class="border-b border-gray-500 border-dotted"
-                        >
-                          Student
-                        </a>
-                      </div>
+                    <div className="flex ml-2 mt-2">
+                      <p  className="text-xs text-gray-600">Already have account? <a className="border-b border-gray-500 border-dotted" href="/login">Login</a> </p>
                     </div>
                   </div>
                 </div>
