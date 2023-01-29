@@ -23,6 +23,8 @@ const SignUpStudent = () => {
           [name]: value,
         });
       };
+
+      
     
       const SubmitHandler = async (e) => {
         e.preventDefault();

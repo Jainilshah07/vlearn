@@ -13,7 +13,7 @@ import ViewCourses from "./pages/ViewCourses";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route exact path="/login" element={<Login />}></Route>
@@ -53,6 +53,9 @@ function App() {
                 element={<ViewCourses/>}
               ></Route>
             </Routes>
+          </BrowserRouter> */}
+          <RiskPrediction/>
+      
       </BrowserRouter>
     </div>
   );
