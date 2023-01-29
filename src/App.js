@@ -39,6 +39,11 @@ function App() {
                 path="/profile-teacher"
                 element={<Calendar />}
               ></Route>
+              <Route
+                exact
+                path="/risk-pred"
+                element={<Calendar/>}
+              ></Route>
             </Routes>
       </BrowserRouter>
     </div>

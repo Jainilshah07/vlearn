@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-export default function Chart() {
+export default function Chart1() {
   const labels = [
     "Flat",
     "WebProgramming",
