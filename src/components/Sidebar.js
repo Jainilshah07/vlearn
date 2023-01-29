@@ -68,7 +68,7 @@ const Sidebar = () => {
             </li>
           </div>
           </Link>
-          <Link to="/">
+          <Link to="/profile-student">
           <div className="pt-2">
             <li className="text-white text-sm flex items-center gap-x-4 p-2 hover:bg-blue rounded-md mt-2">
               <span className="text-2xl block float-left">

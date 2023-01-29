@@ -5,6 +5,9 @@ import Dashboard from "./components/Dashboard";
 import SignUpTeacher from "./pages/login/SignUpTeacher";
 import SignUpStudent from "./pages/login/SignUpStudent";
 import Calendar from "./pages/Calendar";
+import FormStud from "./pages/FormStud";
+import FormTeach from "./pages/FormTeach";
+import ViewCourses from "./pages/ViewCourses";
 // import { Calendar } from "@fullcalendar/core";
 
 function App() {
@@ -32,17 +35,22 @@ function App() {
               <Route
                 exact
                 path="/profile-student"
-                element={<Calendar />}
+                element={<FormStud />}
               ></Route>
               <Route
                 exact
                 path="/profile-teacher"
-                element={<Calendar />}
+                element={<FormTeach />}
               ></Route>
               <Route
                 exact
                 path="/risk-pred"
                 element={<Calendar/>}
+              ></Route>
+              <Route
+                exact
+                path="/ViewCourses"
+                element={<ViewCourses/>}
               ></Route>
             </Routes>
       </BrowserRouter>
