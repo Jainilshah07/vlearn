@@ -8,12 +8,13 @@ import Calendar from "./pages/Calendar";
 import FormStud from "./pages/FormStud";
 import FormTeach from "./pages/FormTeach";
 import ViewCourses from "./pages/ViewCourses";
+import RiskPrediction from "./pages/RiskPrediction";
 // import { Calendar } from "@fullcalendar/core";
 
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
+      <BrowserRouter>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route exact path="/login" element={<Login />}></Route>
@@ -52,11 +53,14 @@ function App() {
                 path="/ViewCourses"
                 element={<ViewCourses/>}
               ></Route>
+              <Route
+                exact
+                path="/risk-prediction"
+                element={<RiskPrediction />}
+              ></Route>
             </Routes>
-          </BrowserRouter> */}
+          </BrowserRouter>
           <RiskPrediction/>
-      
-      </BrowserRouter>
     </div>
   );
 }
