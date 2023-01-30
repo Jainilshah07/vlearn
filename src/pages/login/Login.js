@@ -36,11 +36,11 @@ const Login = () => {
         localStorage.setItem("signature",res.data.signature)
         navigate("/")
       }
-      else if(role=="teacher"){
+      else {
         const res = await axios.post("/teacher/login", user);
         console.log(res.data);
         localStorage.setItem("signature",res.data.signature)
-        navigate("/")
+        navigate("/dashboard2")
       }
     }catch(error) {
       console.log("error form content", error)

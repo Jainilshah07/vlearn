@@ -11,6 +11,8 @@ import ViewCourses from "./pages/ViewCourses";
 import RiskPrediction from "./pages/RiskPrediction";
 import Notes from "./pages/Notes";
 import Assignment from "./pages/Assignment";
+import LetsImprove from "./pages/LetsImprove";
+import Dashboard2 from "./components/Dashboard2";
 // import { Calendar } from "@fullcalendar/core";
 
 function App() {
@@ -65,9 +67,18 @@ function App() {
                 path="/announcements"
                 element={<Assignment />}
               ></Route>
+              <Route
+                exact
+                path="/lets-improve"
+                element={<LetsImprove />}
+              ></Route>
+              <Route
+                exact
+                path="/dashboard2"
+                element={<Dashboard2 />}
+              ></Route>
             </Routes>
           </BrowserRouter>
-          <RiskPrediction/>
     </div>
   );
 }

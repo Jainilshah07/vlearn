@@ -43,6 +43,8 @@ module.exports.TeacherLoginDTO = Joi.object({
 
     email: Joi.string().email().required(),
 
+    role: Joi.string().required(),
+
     password: Joi.string().required(),
 })
 

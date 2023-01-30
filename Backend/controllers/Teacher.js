@@ -161,7 +161,7 @@ module.exports.TeacherLogin = async (req, res, next) => {
 
     await TeacherLoginDTO.validateAsync(req.body)
 
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
 
     const teacher = await Teacher.findOne({ email: email })
 
@@ -172,6 +172,7 @@ module.exports.TeacherLogin = async (req, res, next) => {
 
             const signature = await GenerateSignature({
                 _id: teacher._id,
+                role:teacher.role,
                 email: teacher.email,
                 teacherId: teacher.teacherId
             })
