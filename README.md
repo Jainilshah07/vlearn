@@ -1,1 +1,1 @@
-This Repository consists of the V-leanr Project. This project was developed for the Bit-n-Build 2023 hackathon for AI/ML domain. Here,we take the students scores to predict the sgpa of that particular semester by using the dataset consisting of seniors marks.
+This Repository consists of the V-learn Project. This project was developed for the Bit-n-Build 2023 hackathon for AI/ML domain. Here,we take the students scores to predict the sgpa of that particular semester by using the dataset consisting of seniors marks.
