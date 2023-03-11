@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix,classification_report
+import pickle
+from sklearn import metrics
+df = pd.read_csv('/content/drive/MyDrive/Hackathon_dataset_tt1.csv')
+df_max_scaled = df.copy()
+  
+column = 'SGPA'
+df_max_scaled[column] = df_max_scaled[column] /10
+
+Y = df_max_scaled['SGPA']
+
+X = df_max_scaled.drop(['NAME'],axis=1)
+X = X.drop(['SGPA'],axis=1)
+X1 = X.apply(lambda iterator: (iterator/25).round(2))
+X2 = pd.DataFrame(X1)
+
+X_train,X_test,Y_train,Y_test= train_test_split(X2,Y,test_size=0.3,random_state=101)
+
+from sklearn.linear_model import LinearRegression
+lm = LinearRegression()
+lm.fit(X_train,Y_train)
+pred = lm.predict(X_test)
+print(metrics.mean_absolute_error(Y_test,pred))
+
+tt=[[0.29,0.39,0.49,0.19,0.59]]
+print(lm.predict(tt)*10)
+
+filename = 'finalized_model'
+pickle.dump(lm, open(filename, 'wb'))
+print(lm.coef_)
+print(lm.intercept_)
+# some time later...
+ 
+# load the model from disk
+
+df.describe()
