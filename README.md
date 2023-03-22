@@ -10,6 +10,7 @@ Students can also calculate the Risk Factor by entering their term test marks to
 ## Features
 
 **Student Grouping**
+
 Grouping based on Weakness: VLearn uses a classification and clustering based machine learning algorithm to identify weak students and group them accordingly. This helps teachers to pay special attention to those students and improve their academic performance.
 
 **Personal Schedule Management**
